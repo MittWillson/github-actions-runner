@@ -1,4 +1,11 @@
-FROM quay.io/evryfs/base-ubuntu:focal-20210723
+FROM --platform=$TARGETPLATFORM ubuntu:focal
+
+ENV DEBIAN_FRONTEND=noninteractive LANG=C.UTF-8
+RUN apt-get update && \
+	apt-get --no-install-recommends -y install curl ca-certificates vim-tiny iputils-ping netcat iproute2 net-tools tar gzip bzip2 unzip tzdata lsof psmisc less && \
+	apt-get -y clean && \
+	rm -rf /var/cache/apt /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 
 ARG RUNNER_VERSION=2.280.3
 
