@@ -7,7 +7,7 @@ RUN apt-get update && \
 	rm -rf /var/cache/apt /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
-ARG RUNNER_VERSION=2.281.1
+ARG RUNNER_VERSION=2.283.2
 
 # This the release tag of virtual-environments: https://github.com/actions/virtual-environments/releases
 ARG UBUNTU_VERSION=2004
